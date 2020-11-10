@@ -2,9 +2,26 @@ package com.program.Entities;
 
 import java.time.LocalDate;
 import java.util.Objects;
-import com.program.Entities.Client;
+
+/**
+ * Class InternetContract that extends class Contract is used
+ * if we make a contract about providing internet connection
+ * and related services.
+ * @author Arseniy Volnenko
+ */
 public class InternetContract extends Contract{
+    /**
+     * Declared internet connection speed
+     */
     int maxSpeed;
+
+    public InternetContract() {
+    }
+
+    public InternetContract(int id, LocalDate dateStart, LocalDate dateEnd, Client client, int maxSpeed) {
+        super(id, dateStart, dateEnd, client);
+        this.maxSpeed = maxSpeed;
+    }
 
     public int getMaxSpeed() {
         return maxSpeed;

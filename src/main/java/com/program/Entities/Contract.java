@@ -3,11 +3,38 @@ package com.program.Entities;
 import java.time.LocalDate;
 import java.util.Objects;
 
+/**
+ * Class Contract contains base information of any contract. Contract is superclass for InternetContract, TVContract and PhoneContract.
+ * @author Arseniy Volnenko
+ */
 public class Contract {
+    /**
+     * ID of contract
+     */
     int id;
+    /**
+     * When contract started
+     */
     LocalDate dateStart;
+    /**
+     * When contract is going to be finished
+     */
     LocalDate dateEnd;
+    /**
+     * Object of client that uses certain contract
+     */
     public Client client;
+
+    public Contract() {
+
+    }
+
+    public Contract(int id, LocalDate dateStart, LocalDate dateEnd, Client client) {
+        this.id = id;
+        this.dateStart = dateStart;
+        this.dateEnd = dateEnd;
+        this.client = client;
+    }
 
     public int getId() {
         return id;

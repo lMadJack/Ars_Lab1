@@ -2,11 +2,33 @@ package com.program.Entities;
 
 import java.time.LocalDate;
 import java.util.Objects;
-
+/**
+ * Class PhoneContract that extends class Contract is used if we make a contract about providing phone connection and related services.
+ * @author Arseniy Volnenko
+ */
 public class PhoneContract extends Contract{
+    /**
+     * Time for client that he can spend on phone calls
+     */
     int mins;
+    /**
+     * Amount of messages that client can send
+     */
     int sms;
+    /**
+     * Amount of Gb traffic that client can use
+     */
     int traffic;
+
+    public PhoneContract() {
+    }
+
+    public PhoneContract(int id, LocalDate dateStart, LocalDate dateEnd, Client client, int mins, int sms, int traffic) {
+        super(id, dateStart, dateEnd, client);
+        this.mins = mins;
+        this.sms = sms;
+        this.traffic = traffic;
+    }
 
     public int getMins() {
         return mins;

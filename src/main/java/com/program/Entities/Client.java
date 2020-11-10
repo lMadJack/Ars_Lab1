@@ -3,18 +3,37 @@ package com.program.Entities;
 import java.time.LocalDate;
 import java.util.Objects;
 
+/**
+ * Class Client contains all the inforamation about client entity
+ * @author Arseniy Volnenko
+ */
 public class Client {
+    /**
+     * ID of client
+     */
     int id;
+    /**
+     * Name of client
+     */
     String name;
+    /**
+     * Date of birth of client
+     */
     LocalDate date;
+    /**
+     * Sex of client
+     */
     String sex;
-    int passportNumber;
+    /**
+     * Passport number of client
+     */
+    String passportNumber;
 
     public Client() {
 
     }
 
-    public Client(int id, String name, LocalDate date, String sex, int passportNumber) {
+    public Client(int id, String name, LocalDate date, String sex, String passportNumber) {
         this.id = id;
         this.name = name;
         this.date = date;
@@ -54,11 +73,11 @@ public class Client {
         this.sex = sex;
     }
 
-    public int getPassportNumber() {
+    public String getPassportNumber() {
         return passportNumber;
     }
 
-    public void setPassportNumber(int passportNumber) {
+    public void setPassportNumber(String passportNumber) {
         this.passportNumber = passportNumber;
     }
 
@@ -79,7 +98,7 @@ public class Client {
         if (o == null || getClass() != o.getClass()) return false;
         Client client = (Client) o;
         return id == client.id &&
-                passportNumber == client.passportNumber &&
+                Objects.equals(passportNumber, client.passportNumber) &&
                 Objects.equals(name, client.name) &&
                 Objects.equals(date, client.date) &&
                 Objects.equals(sex, client.sex);

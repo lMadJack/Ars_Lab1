@@ -28,10 +28,8 @@ public class MyList {
         return data[index];
     }
 
-    public void getAll() {
-        for (int i = 0; i < num; i++) {
-            System.out.println(data[i]);
-        }
+    public Object[] getAll() {
+        return data;
     }
 
     public void del(int index) {

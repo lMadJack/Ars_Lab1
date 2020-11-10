@@ -2,10 +2,23 @@ package com.program.Entities;
 
 import java.time.LocalDate;
 import java.util.Objects;
-
+/**
+ * Class InternetContract that extends class Contract is used if we make a contract about providing TV connection and related services.
+ * @author Arseniy Volnenko
+ */
 public class TVContract extends Contract {
 
+    /**
+     * Name of TV channel pack
+     */
     String channelPack;
+
+    public TVContract() {
+    }
+    public TVContract(int id, LocalDate dateStart, LocalDate dateEnd, Client client, String channelPack) {
+        super(id, dateStart, dateEnd, client);
+        this.channelPack = channelPack;
+    }
 
     public String getChannelPack() {
         return channelPack;
